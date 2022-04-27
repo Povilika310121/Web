@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS labs</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">  
+    <link rel="stylesheet" href="styles/js.css"> 
+    <script src="js/task1.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    
+</head>
+<body class="body">
+    <div class="container">
+        <header class="header">
+            <div class="nav">
+                <div class="logo"><p>JS LABS Вариант 1</p></div>
+                <ul class="menu">
+                    <li>
+                        <div class="button"><a href="index.html">HOME</a></div>
+                    </li>
+                    <li>
+                        <a href="js.html">JS labs</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="main">
+            <h1><a href="#hidden1" onclick="view('hidden1'); return false">Упражнениe 1</a></h1>            
+            <div class="element", id="hidden1" style="display: none;">
+                <br>
+                <p id="timedisplay">
+                    <script>getDate();</script> 
+                </p>
+                <br>
+            </div>
+            
+            <h1><a href="#hidden2" onclick="view('hidden2'); return false">Упражнениe 2</a></h1> 
+            <div  class="element", id="hidden2" style="display: none;">           
+                <p> Календарь текущего месяца: </p>
+                <br>
+                <p id="calendar">
+                    <script>createCalendar(calendar, 2022, 3);</script>
+                </p> 
+            </div>
+                
+            <h1><a href="#hidden3" onclick="view('hidden3'); return false">Упражнениe 3</a></h1> 
+            <div  class="element", id="hidden3" style="display: none;">
+                <p id = "dom"> 
+                    <script>    
+                        task_3('.main');
+                    </script>
+                </p>
+            </div>      
+
+            <h1><a href="#hidden4" onclick="view('hidden4'); return false">Упражнениe 4</a></h1> 
+            <div  class="element", id="hidden4" style="display: none;">
+                    <div id="2"><h1>block 1</h1></div>
+                    <div id="2"><h1>block 2</h1></div>
+                    <div id="3"><h1>block 3</h1></div>
+                    <div id="4"><h1>block 4</h1></div>
+                    <div id="5"><h1>block 5</h1></div>
+                    <div id="6"><h1>block 6</h1></div>
+                    <script>    
+                        task_4();
+                    </script>           
+            </div> 
+
+            <h1><a href="#hidden5" onclick="view('hidden5'); return false">Упражнениe 5</a></h1> 
+            <div  class="element", id="hidden5" style="display: none;">
+                <h1><a href="#elem" onclick="task_5();">Добавить</a></h1> 
+                <div id="ins_div">  </div>
+            </div>
+            
+            <h1><a href="#hidden6" onclick="view('hidden6'); return false">Упражнениe 6</a></h1> 
+            <div  class="element", id="hidden6" style="display: none;">
+                <img id="image" style="width: 100%;" src="img/1.jpg" >
+                <script>    
+                        task_6();
+                </script>  
+            </div>  
+
+            <h1><a href="#hidden7" onclick="view('hidden7'); return false">Упражнениe 7</a></h1> 
+            <div  class="element", id="hidden7" style="display: none;">
+                <h1>Упражнение 7</h1>
+
+                <template id="tmpl">
+                    <style>
+                    
+                    ::slotted([slot="title"]) {
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin: 0;
+                        line-height: 20px;
+                        letter-spacing: 0.25px;
+                        color: rgba(255, 255, 255, 1);
+                      cursor: pointer;
+                    }
+                  
+                    ::slotted([slot="title"])::before {
+                        content: '📂';
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin: 0;
+                        line-height: 20px;
+                        letter-spacing: 0.25px;
+                        color: rgba(255, 255, 255, 1);
+                        font-size: 14px;
+                    }
+                  
+                    .closed ::slotted([slot="title"])::before {
+                        content: '📁';
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin: 0;
+                        line-height: 20px;
+                        letter-spacing: 0.25px;
+                        color: rgba(255, 255, 255, 1);
+                    }
+                  
+                    .closed ul {
+                      display: none;
+                    }
+                    </style>
+                    <div class="menu">
+                      <slot name="title"></slot>
+                      <ul><slot name="item"></slot></ul>
+                    </div>
+                  </template>
+                  <script>
+                  customElements.define('custom-menu', class extends HTMLElement {
+                    connectedCallback() {
+                      this.attachShadow({mode: 'open'});
+                      this.shadowRoot.append( tmpl.content.cloneNode(true) );
+                      this.shadowRoot.querySelector('slot[name="title"]').onclick = () => {
+                        this.shadowRoot.querySelector('.menu').classList.toggle('closed');
+                      };
+                    }
+                  });
+                  </script>
+                  
+                  <custom-menu>
+                    <span slot="title">Сладости</span>
+                    <li slot="item", style="color: white;">Леденцы</li>
+                    <li slot="item", style="color: white;">Фруктовые тосты</li>
+                    <li slot="item", style="color: white;">Кексы</li>
+                  </custom-menu>
+            </div>  
+
+            <h1><a href="#hidden8" onclick="view('hidden8'); return false">Упражнениe 8</a></h1>
+            <div  class="element", id="hidden8" style="display: none;">
+                <p id="textlogo">Я спрятался</p>
+                <img id="photo" src="img/1.jpg" style="width: 70%; margin-top: -30px; position: relative;">
+                    <script> task_8(); </script>
+            </div>        
+            
+        </section>
+    </div> 
+
+  
+</body>
+</html>

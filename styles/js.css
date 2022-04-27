@@ -1,0 +1,271 @@
+
+.body {
+    padding: 0;
+    margin: 0;
+    background: #BF264C;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 1274px;
+    margin: 0 auto;
+}
+.nav {
+    display: flex;
+    margin: 20px 0;
+    background: linear-gradient(2deg, #43005d, #70014C);
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.logo {
+margin-right: 30px;
+    margin-left: 61px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: rgba(255, 255, 255, 0.87);
+}
+.menu {
+    display: flex;
+}
+
+ul, li {
+    margin: auto 0;
+    padding: 0;
+}
+.menu li {
+    margin-right: 20px;
+    list-style: none;
+}
+.menu li a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+a { 
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: white;
+   }
+   a:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание 
+                                   при наведении курсора мыши на ссылку */
+   }
+
+.work {
+    display: flex;
+    margin-top: 8px;
+    padding-top: 8px;
+    height: 500px;
+    background: #D55D37;
+    border-radius: 2px;
+}
+
+.element {
+    position: relative;
+    margin-left: 8px;
+    padding: 20px;
+    width: 30%;  
+    height: fit-content;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05),#70014C, #121212);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+img.photo {
+    position: relative;
+    filter: alpha (Opacity=100);
+    opacity: 1;
+    transition: all 0.5s ease-in-out; /* эффект перехода для других браузеров */
+    width: 50%;
+    margin-top: -30%;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10000px;
+
+}
+
+.image{
+    width: 50%;
+}
+
+img.photo:hover {
+    filter: alpha (Opacity=0);
+    opacity: 0;
+}
+.under{
+    position: relative;
+    margin-top: 25%;
+    margin-left: 10%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.main{
+    margin-left: 5%;
+}
+
+.main h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.main p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.orange_back {
+    background-color: #ee8833;
+}
+
+.displayed{
+    display:block;
+}
+.hidden{
+    display:none;
+}
+.fixed_block{
+    position: fixed;
+    width: 300px;
+    bottom: 5px;
+    /*margin: auto;*/
+    left: 50%;
+    margin: 0 0 0 -180px;
+    padding: 20px;
+    border: 1px solid #000;
+}
+#task_4.displayed{
+    display:flex;
+}
+
+ul#list {
+    list-style: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+ul#list > li {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Open Sans;
+    font-size: 14px;
+    padding: 4px;
+    border: solid rgba(255, 255, 255, 0.6) 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .btn:hover {
+    background: rgba(128, 128, 128, 0.527);
+    border: solid rgba(255, 255, 255, 0.6) 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+ }
+
+/* Таблица календаря */
+table {
+    border-collapse: collapse;
+}
+
+.text_red {
+    color: #F00;
+  }
+
+td,th {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 3px;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+    /* background-color: #E6E6E6; */
+    /* цвет дней недели */
+}
+
+#blink {
+    -webkit-animation: blink 1s linear infinite;
+    animation: blink 2s linear infinite;
+  }
+@-webkit-keyframes blink {
+    50% { color: rgb(34, 34, 34); }
+    51% { color: rgba(34, 34, 34, 0); }
+    100% { color: rgba(34, 34, 34, 0); }
+  }
+@keyframes blink {
+    50% { color: rgb(34, 34, 34); }
+    51% { color: rgba(34, 34, 34, 0); }
+    100% { color: rgba(34, 34, 34, 0); }
+  }
+
+
+
+/* ----------------------------- */
+#field {
+    width: 200px;
+    height: 150px;
+    /* border: 10px solid black;
+    background-color: gray; */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #sonic {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    transition: all 1s;
+  }
+
+  /* ------------------------------ */
+  
