@@ -107,9 +107,9 @@ function getDay(date) { // получить номер дня недели, от
 }
  
 function view(n) {
-    style = document.getElementById(n).style;
-    $("element").slideDown( "slow");
-    style.display = (style.display == 'block') ? 'none' : 'block';
+  style = document.getElementById(n).style;
+  $("element").slideDown( "slow");
+  style.display = (style.display == 'block') ? 'none' : 'block';
 }
 
 function task_3(n){
@@ -173,3 +173,60 @@ function task_8(){
       photo.addEventListener('mouseout',function(){
       img.style.opacity = '1';})
   }
+
+function checkEmail (userEmail) {
+  let reg = new RegExp(/^[a-zA-Z0-9]{2,}@([a-zA-Z0-9]{2,}\.)+[a-zA-Z0-9]{2,4}$/im);
+  let error = document.getElementById('all_error');
+  if(reg.test(userEmail) == false) {
+     error.innerHTML = 'Пожалуйста, введите корректный email.';
+     return false;
+  } else {return true; }
+};
+  
+function checkPassword (userPassword) {
+  let password = String(userPassword);
+    var count = 0;
+    count += password.length>5 ? 1 : 0;
+    count += /[a-z]/.test(password) ? 1 : 0;
+    count += /[A-Z]/.test(password) ? 1 : 0;
+    count += /\d/.test(password) ? 1 : 0;
+    
+    if(count == 4) {
+      return true;
+    } else {
+    return false;
+    }
+  }
+
+function validateForm () {
+  let name = document.getElementById('namee');
+  let email = document.getElementById('e_mail');
+  let password = document.getElementById('pass_word');
+  let repeatPassword = document.getElementById('repeat_password');
+  let country = document.getElementById('country');
+  let phoneNumber = document.getElementById('phone');
+  let error = document.getElementById('all_error');
+  let allObj = [name, email, password, repeatPassword, country, phoneNumber];
+  let check = true;
+  for(let i = 0; i < allObj.length; i++) {
+    if(allObj[i] == null){
+      error.innerHTML = 'Заполните все поля'; setInterval(error.innerHTML = '', 10);
+      return false;
+    }
+  }
+  for(let i = 0; i < allObj.length; i++) {
+    if(allObj[i] == null || allObj[i].value == ''){
+      check = false;
+      if (!check) { check = false; error.innerHTML = 'Заполните ' + (allObj[i].name) + ' верно';}
+    }
+  }
+  if (!checkEmail(email.value)) {check = false;};
+  if (!checkPassword(password.value)) { check = false; error.innerHTML ='Заполните Пароль верно';}
+  if (password.value != repeatPassword.value) { check = false; error.innerHTML = 'Пароли не совпадают';}
+  if (country.value == 'Выберите страну проживания') { check = false; error.innerHTML = 'Выберите страну проживания';}
+
+  if (check) {error.innerHTML = 'Всё хорошо'};
+};
+
+  
+  

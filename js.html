@@ -65,9 +65,9 @@
                     <div id="4"><h1>block 4</h1></div>
                     <div id="5"><h1>block 5</h1></div>
                     <div id="6"><h1>block 6</h1></div>
-                    <script>    
+                    <!-- <script>    
                         task_4();
-                    </script>           
+                    </script>            -->
             </div> 
 
             <h1><a href="#hidden5" onclick="view('hidden5'); return false">Упражнениe 5</a></h1> 
@@ -162,11 +162,146 @@
                 <p id="textlogo">Я спрятался</p>
                 <img id="photo" src="img/1.jpg" style="width: 70%; margin-top: -30px; position: relative;">
                     <script> task_8(); </script>
-            </div>        
+            </div>   
             
+            <h1><a href="#hidden9" onclick="view('hidden9'); return false">Упражнениe 9</a></h1>
+            <div id="hidden9" style="display: none; width: 500px; background-color: #520038;position: relative;
+            margin-left: 8px;
+            padding: 20px;
+            width: 400px;  
+            height: fit-content;border-radius: 10px;">
+                <form>
+                    <div>
+                      <style>
+                        .invalid { border-color: rgb(255, 0, 0); }
+                        #error { color: rgb(255, 0, 0) }
+                      </style>
+                      <label for="name">Имя:</label>
+                      <input style="margin-left: 40px; width: 300px;" id="namee" type="text" name="name" required placeholder="Введите имя">
+                      <script>
+                        namee.onblur = function() {
+                          if (namee.value == '') {
+                            namee.classList.add('invalid');
+                          }
+                        };
+                        namee.onfocus = function() {
+                          if (this.classList.contains('invalid')) {
+                            this.classList.remove('invalid');
+                          }
+                        };
+                        </script>
+                    </div>
+
+                    <div style="padding-top: 15px;">
+                      <label>Пол:</label>
+                      <input  style="margin-left: 50px;" type="radio" id="sex" name="sex" value="мужской">мужской
+                      <input  style="margin-left: 20px;" type="radio" name="sex" value="женский">женский
+                    </div>
+
+                    <div style="padding-top: 15px;">
+                      <style>
+                        .invalid { border-color: red; }
+                      </style>
+                      <label for="email">E-mail:</label>
+                      <input  style="margin-left: 30px; width: 300px;"id="e_mail" type="email" name="email" required placeholder="Введите E-mail">
+                      <script>
+                        e_mail.onblur = function() {
+                          let reg = new RegExp(/^[a-zA-Z0-9]{2,}@([a-zA-Z0-9]{2,}\.)+[a-zA-Z0-9]{2,4}$/im);
+                          if (reg.test(e_mail.value) == false) {
+                            e_mail.classList.add('invalid');
+                          }
+                        };
+                        e_mail.onfocus = function() {
+                          if (this.classList.contains('invalid')) {
+                            this.classList.remove('invalid');
+                          }
+                        };
+                        </script>
+                    </div>
+
+                    <div style="padding-top: 15px;">
+                      <style>
+                        .invalid { border-color: red; }
+                        #error { color: red }
+                      </style>
+                      <label>Пароль:</label>
+                      <input style="margin-left: 20px; width: 300px;" type="password" name="password" id='pass_word' autocomplete="off" placeholder="Введите пароль" >
+                      <script>
+                        pass_word.onblur = function() {
+                          let reg = new RegExp(/^[a-zA-Z0-9]{6,}$/);
+                          if (reg.test(pass_word.value) == false) {
+                            pass_word.classList.add('invalid');
+                          }
+                        };
+                        pass_word.onfocus = function() {
+                          if (this.classList.contains('invalid')) {
+                            this.classList.remove('invalid');
+                          }
+                        };
+                        </script>
+                    </div>
+
+                    <div style="padding-top: 15px;">
+                        <style>
+                          .invalid { border-color: red; }
+                          #error { color: red }
+                        </style>
+                        <label>Повторите <br> пароль:</label>
+                        <input style="margin-left: 23px; width: 300px;" type="password" name="repeat-password" id='repeat_password' autocomplete="off" placeholder="Повторите пароль">
+                        <script>
+                          repeat_password.onblur = function() {
+                            let reg = new RegExp(/^[a-zA-Z0-9]{6,}$/);
+                            if (reg.test(repeat_password.value) == false) {
+                              repeat_password.classList.add('invalid');
+                            }
+                          };
+                          repeat_password.onfocus = function() {
+                            if (this.classList.contains('invalid')) {
+                              this.classList.remove('invalid');
+                            }
+                          };
+                        </script>
+                    </div>
+
+                    <div style="padding-top: 15px;">
+                      <label for="country">Страна:</label>
+                      <select style="border: white; margin-left: 25px; width: 305px;" id="country" name="country">
+                        <option>Выберите страну проживания</option>
+                        <option value="Россия">Россия</option> 
+                        <option value="Китай">Китай</option> 
+                        <option value="Корея">Корея</option>
+                        <option value="Франция">Франция</option> 
+                        <option value="Казахстан">Казахстан</option> 
+                      </select> 
+                    </div> 
+
+                    <div style="padding-top: 15px; padding-bottom: 10px;">
+                      <label>Номер<br>телефона:</label>
+                      <input style="margin-left: 8px; width: 300px;" type="text" name="phone" id='phone' autocomplete="off" placeholder="Введите номер телефона">
+                      <script>
+                        phone.onblur = function() {
+                          let reg = new RegExp(/^[0-9]{6,}$/);
+                          if (reg.test(phone.value) == false) {
+                            phone.classList.add('invalid');
+                          }
+                        };
+                        phone.onfocus = function() {
+                          if (this.classList.contains('invalid')) {
+                            this.classList.remove('invalid');
+                          }
+                        };
+                      </script>
+                    </div>
+
+                    <div class="buttons">
+                        <input class="button-form" type="button" onclick="validateForm();" value="Регистрация">
+                        <input class="button-form" type="reset" value="Очистить форму">
+                    </div>
+
+                    <div id="all_error" style="height:20px; padding-top: 5px; padding-bottom: 5px;"> </div>
+                </form>       
+            </div>   
         </section>
     </div> 
-
-  
 </body>
 </html>
