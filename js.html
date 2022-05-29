@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">  
     <link rel="stylesheet" href="styles/js.css"> 
     <script src="js/task1.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
     
 </head>
-<body class="body">
+  <body class="body">
     <div class="container">
         <header class="header">
             <div class="nav">
@@ -301,7 +303,18 @@
                     <div id="all_error" style="height:20px; padding-top: 5px; padding-bottom: 5px;"> </div>
                 </form>       
             </div>   
+
+            <h1><a href="#hidden10" onclick="view('hidden10'); return false">JQuery</a></h1>
+            <div  class="element", id="hidden10" style="display: none;position: relative;
+            margin-left: 8px;
+            padding: 20px;
+            width: 600px;  
+            height:200px;
+            border-radius: 10px;">
+              <button onclick="f_startAnimation();" id="go">Запустить анимацию</button>
+              <div class="block"></div>
+
         </section>
     </div> 
-</body>
+  </body>
 </html>

@@ -228,5 +228,13 @@ function validateForm () {
   if (check) {error.innerHTML = 'Всё хорошо'};
 };
 
-  
-  
+
+function f_startAnimation() {
+  $('.block').animate({
+    width: '150px',
+    height: '150px',
+    'margin-left': '400px',
+    opacity: '0.0' 
+    
+  }, 3000);
+}

@@ -6,6 +6,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.block {
+    width: 80px;
+    height: 80px;
+    background: rgb(0, 187, 255);
+    margin: 30px;
+  }
+
 .container {
     width: 1274px;
     margin: 0 auto;
